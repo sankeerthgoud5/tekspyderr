@@ -1,0 +1,29 @@
+
+# Dependencies
+node_modules/
+client/node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+client/dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+*.log
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Coverage and temporary files
+coverage/
+*.tmp

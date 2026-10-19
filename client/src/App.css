@@ -1,0 +1,1965 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "Inter", Arial, sans-serif;
+  color: #1e293b;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 100;
+  width: 245px;
+  padding: 30px 18px;
+  overflow-y: auto;
+  color: #d8e2f2;
+  background: #111c32;
+}
+
+.brand {
+  margin: 0 0 42px 10px;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.workspace-label,
+.eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  color: #8999b4;
+}
+
+.workspace-label {
+  margin: 0 10px 16px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.nav-item {
+  display: block;
+  width: 100%;
+  padding: 13px 12px;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: #c0cbe0;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #ffffff;
+  background: #1c2b47;
+}
+
+.nav-item.active {
+  color: #ffffff;
+  background: #315de8;
+  border-color: #456bf0;
+}
+
+.nav-item:focus-visible {
+  outline: 2px solid #93b4ff;
+  outline-offset: 2px;
+}
+
+.nav-item span {
+  display: inline-block;
+  min-width: 23px;
+  margin-right: 4px;
+  text-align: center;
+}
+
+/* MAIN CONTENT */
+
+.main {
+  width: auto;
+  min-width: 0;
+  max-width: 1800px;
+  margin-left: 245px;
+  padding: 30px 38px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.topbar .eyebrow {
+  margin-bottom: 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 29px;
+  letter-spacing: -1px;
+}
+
+.profile {
+  padding: 11px 16px;
+  border: 1px solid #e1e7f0;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* DASHBOARD WELCOME */
+
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 34px;
+  border-radius: 17px;
+  color: #ffffff;
+  background: linear-gradient(115deg, #244bd0, #5579f5);
+  box-shadow: 0 12px 28px #315de822;
+}
+
+.welcome h2 {
+  margin: 12px 0;
+  font-size: 24px;
+}
+
+.welcome p:last-child {
+  margin-bottom: 0;
+  color: #e0e8ff;
+  font-size: 13px;
+}
+
+.light {
+  color: #d0dcff;
+}
+
+.welcome-icon {
+  color: #ffffffaa;
+  font-size: 68px;
+  flex-shrink: 0;
+}
+
+/* STATISTICS */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 25px 0;
+}
+
+.stat-card,
+.table-card {
+  min-width: 0;
+  border: 1px solid #e7ebf3;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 15px #17255405;
+}
+
+.stat-card {
+  padding: 23px;
+}
+
+.stat-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  font-size: 19px;
+}
+
+.blue {
+  color: #315de8;
+  background: #eaf0ff;
+}
+
+.purple {
+  color: #8054d6;
+  background: #f1eaff;
+}
+
+.green {
+  color: #14865c;
+  background: #e3f8ef;
+}
+
+.stat-card p {
+  margin: 18px 0 7px;
+  color: #69758a;
+  font-size: 13px;
+}
+
+.stat-card h2 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+.stat-card .status-text {
+  color: #14865c;
+  font-size: 22px;
+}
+
+.muted {
+  color: #8994a6;
+  font-size: 11px;
+}
+
+/* CARDS AND SECTION HEADERS */
+
+.table-card {
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.employee-header,
+.table-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 24px;
+}
+
+.employee-header h2,
+.table-heading h2 {
+  margin: 0 0 8px;
+  color: #1e293b;
+  font-size: 18px;
+}
+
+.employee-header p,
+.table-heading p {
+  margin: 0;
+  color: #8490a3;
+  font-size: 12px;
+}
+
+.employee-header-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.count,
+.department {
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius: 7px;
+  color: #315de8;
+  background: #edf2ff;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* DASHBOARD QUICK ACTIONS */
+
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 24px 24px;
+}
+
+.quick-actions button {
+  min-height: 42px;
+}
+
+/* EMPLOYEE SEARCH AND FILTERS */
+
+.employee-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 24px 20px;
+}
+
+.employee-controls input,
+.employee-controls select {
+  min-width: 200px;
+  padding: 12px 14px;
+  border: 1px solid #e1e7f0;
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: #26334a;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.employee-controls input {
+  flex: 1;
+}
+
+.employee-controls input:focus,
+.employee-controls select:focus {
+  border-color: #315de8;
+  box-shadow: 0 0 0 3px #315de81a;
+}
+
+/* BUTTONS */
+
+.add-employee-btn {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 9px;
+  background: #4f46e5;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.add-employee-btn:hover {
+  background: #3730a3;
+}
+
+.add-employee-btn:active {
+  transform: translateY(1px);
+}
+
+.add-employee-btn:focus-visible,
+.cancel-btn:focus-visible,
+.close-modal:focus-visible {
+  outline: 2px solid #818cf8;
+  outline-offset: 3px;
+}
+
+.add-employee-btn:disabled,
+.cancel-btn:disabled,
+.close-modal:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* TABLES */
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+}
+
+thead {
+  background: #f8faff;
+  color: #8490a3;
+}
+
+th {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+
+th,
+td {
+  padding: 17px 20px;
+  border-top: 1px solid #edf0f6;
+}
+
+td {
+  color: #59667b;
+}
+
+tbody tr {
+  transition: background 0.15s ease;
+}
+
+tbody tr:hover {
+  background: #fafbff;
+}
+
+.employee {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 155px;
+}
+
+.employee strong {
+  display: block;
+  color: #26334a;
+  font-size: 12px;
+}
+
+.employee small {
+  display: block;
+  margin-top: 5px;
+  color: #97a1b1;
+  font-size: 10px;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #eaf0ff;
+  color: #315de8;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* MESSAGES AND ERRORS */
+
+.message {
+  padding: 20px 24px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.message p {
+  margin: 0 0 8px;
+}
+
+.message p:last-child {
+  margin-bottom: 0;
+}
+
+.error {
+  color: #c0392b;
+}
+
+.message.error {
+  color: #c0392b;
+}
+
+.message button {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  background: #fff7f7;
+  color: #b91c1c;
+  cursor: pointer;
+}
+
+.success-message {
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  border: 1px solid #bbf7d0;
+  border-radius: 9px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 13px;
+}
+
+/* SETTINGS */
+
+.settings-content {
+  padding: 8px 24px 24px;
+}
+
+.settings-content h3 {
+  margin-top: 12px;
+  color: #26334a;
+  font-size: 15px;
+}
+
+.settings-content p {
+  margin: 12px 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 25px 0;
+  color: #98a2b3;
+  text-align: center;
+  font-size: 11px;
+}
+
+/* ADD EMPLOYEE MODAL */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.62);
+  overflow-y: auto;
+}
+
+.employee-modal {
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #172033;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.modal-header h2 {
+  margin: 5px 0 8px;
+  font-size: 22px;
+}
+
+.modal-header p {
+  margin-top: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.close-modal {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  background: #e2e8f0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-grid input,
+.form-grid select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #172033;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  outline: 2px solid #c7d2fe;
+  border-color: #6366f1;
+}
+
+.form-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cancel-btn {
+  padding: 11px 18px;
+  border: 1px solid #dbe2ea;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #f8fafc;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 210px;
+  }
+
+  .main {
+    margin-left: 210px;
+    padding: 26px 24px;
+  }
+
+  .stats {
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 18px;
+  }
+
+  .employee-header {
+    align-items: flex-start;
+  }
+}
+
+/* SMALL TABLETS */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 190px;
+    padding: 24px 14px;
+  }
+
+  .main {
+    margin-left: 190px;
+    padding: 24px 20px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome {
+    padding: 25px;
+  }
+
+  .employee-header {
+    flex-wrap: wrap;
+  }
+
+  .employee-header-actions {
+    justify-content: flex-start;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .sidebar {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    padding: 18px;
+  }
+
+  .brand {
+    margin: 0 0 18px;
+    font-size: 23px;
+  }
+
+  .workspace-label {
+    display: none;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .nav-item {
+    width: auto;
+    flex: 1 1 auto;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .nav-item span {
+    min-width: auto;
+    margin-right: 3px;
+  }
+
+  .main {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px 14px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    margin-bottom: 22px;
+  }
+
+  .topbar h1 {
+    font-size: 24px;
+  }
+
+  .profile {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .welcome {
+    padding: 23px;
+  }
+
+  .welcome h2 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .welcome-icon {
+    display: none;
+  }
+
+  .stats {
+    gap: 12px;
+    margin: 18px 0;
+  }
+
+  .stat-card {
+    padding: 18px;
+  }
+
+  .employee-header,
+  .table-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 19px;
+  }
+
+  .employee-header-actions {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .employee-controls {
+    padding: 0 19px 18px;
+  }
+
+  .employee-controls input,
+  .employee-controls select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .quick-actions {
+    padding: 0 19px 19px;
+  }
+
+  .quick-actions button {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 14px;
+  }
+
+  .employee-modal {
+    padding: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid .full-width {
+    grid-column: auto;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+
+  footer {
+    padding: 22px 8px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Attendance Management */
+
+.attendance-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.attendance-page .employee-header h1 {
+  margin-bottom: 8px;
+}
+
+.attendance-page .employee-header p {
+  color: #64748b;
+}
+
+.attendance-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.attendance-stats .stat-card {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+.attendance-stats .stat-card span {
+  display: block;
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.attendance-stats .stat-card strong {
+  font-size: 28px;
+  color: #0f172a;
+}
+
+.attendance-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 18px;
+}
+
+.attendance-controls input,
+.attendance-controls select {
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  background: #fff;
+  font: inherit;
+}
+
+.attendance-controls input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.attendance-controls select {
+  min-width: 150px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 16px;
+  border-bottom: 1px solid #edf0f5;
+  white-space: nowrap;
+}
+
+.attendance-table th {
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.attendance-table td {
+  color: #334155;
+  font-size: 14px;
+}
+
+.attendance-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.attendance-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-present {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-absent {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-late {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-half-day {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-on-leave {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.error-message {
+  color: #b91c1c;
+}
+
+.error-message button {
+  margin-left: 12px;
+}
+
+@media (max-width: 900px) {
+  .attendance-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .attendance-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .attendance-stats .stat-card {
+    padding: 14px;
+  }
+
+  .attendance-controls {
+    padding: 12px;
+  }
+
+  .attendance-controls input,
+  .attendance-controls select {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+
+.attendance-placeholder {
+  min-height: 270px;
+}
+
+.attendance-placeholder-message {
+  padding: 36px 24px 24px;
+  text-align: center;
+  color: #718096;
+  line-height: 1.7;
+}
+
+.attendance-placeholder-message p {
+  margin: 0 0 12px;
+}
+
+.attendance-placeholder-message p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Attendance Page ===== */
+.attendance-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  color: #17233d;
+}
+
+.attendance-page .employee-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px 30px;
+  background: linear-gradient(135deg, #ffffff, #f0f6ff);
+  border: 1px solid #e1e9f5;
+  border-radius: 20px;
+}
+
+.attendance-page .employee-header h1 {
+  margin: 8px 0;
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 750;
+  letter-spacing: -0.8px;
+}
+
+.attendance-page .employee-header p:not(.eyebrow) {
+  margin: 0;
+  color: #71809b;
+}
+
+.attendance-page .eyebrow {
+  margin: 0;
+  color: #3674e8;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* ===== Primary Buttons ===== */
+.attendance-page .primary-button {
+  padding: 13px 22px;
+  border: none;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #3978f6, #2458d7);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(43, 101, 224, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.attendance-page .primary-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(43, 101, 224, 0.25);
+}
+
+.attendance-page .primary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ===== Mark Attendance Card ===== */
+.attendance-page .attendance-form-card {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e1e9f5;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(30, 60, 100, 0.04);
+}
+
+.attendance-page .attendance-form-card h2 {
+  margin: 0 0 24px;
+  color: #182641;
+  font-size: 22px;
+  font-weight: 750;
+  text-align: left;
+}
+
+.attendance-page .attendance-form-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.35fr) minmax(170px, 1.15fr) minmax(140px, 0.85fr) auto;
+  align-items: end;
+  gap: 18px;
+}
+
+.attendance-page .attendance-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #536783;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.attendance-page .attendance-form-grid input,
+.attendance-page .attendance-form-grid select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #d9e3f1;
+  border-radius: 11px;
+  outline: none;
+  background: #fbfdff;
+  color: #1e2c45;
+  font: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.attendance-page .attendance-form-grid input:focus,
+.attendance-page .attendance-form-grid select:focus,
+.attendance-page .employee-controls input:focus,
+.attendance-page .employee-controls select:focus {
+  border-color: #4b83f5;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 120, 246, 0.11);
+}
+
+.attendance-page .attendance-form-grid button {
+  min-height: 48px;
+  white-space: nowrap;
+}
+
+/* ===== Summary Cards ===== */
+.attendance-page .attendance-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.attendance-page .stat-card {
+  position: relative;
+  overflow: hidden;
+  padding: 25px 20px;
+  border: 1px solid #e1e9f5;
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(30, 60, 100, 0.035);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.attendance-page .stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(30, 60, 100, 0.08);
+}
+
+.attendance-page .stat-card span {
+  display: block;
+  margin-bottom: 12px;
+  color: #71809b;
+  font-size: 14px;
+  font-weight: 550;
+}
+
+.attendance-page .stat-card strong {
+  color: #17233d;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+/* ===== Search and Filter ===== */
+.attendance-page .table-card {
+  overflow: hidden;
+  border: 1px solid #e1e9f5;
+  border-radius: 19px;
+  background: #ffffff;
+  box-shadow: 0 6px 24px rgba(30, 60, 100, 0.035);
+}
+
+.attendance-page .employee-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  border-bottom: 1px solid #edf1f7;
+}
+
+.attendance-page .employee-controls input,
+.attendance-page .employee-controls select {
+  min-height: 48px;
+  padding: 12px 15px;
+  border: 1px solid #dce5f1;
+  border-radius: 11px;
+  outline: none;
+  background: #fbfdff;
+  color: #24334e;
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.attendance-page .employee-controls input {
+  flex: 1;
+  min-width: 0;
+}
+
+.attendance-page .employee-controls select {
+  min-width: 170px;
+}
+
+/* ===== Attendance Table ===== */
+.attendance-page .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.attendance-page .attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.attendance-page .attendance-table thead {
+  background: #f5f8fd;
+}
+
+.attendance-page .attendance-table th {
+  padding: 17px 20px;
+  color: #71809b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.attendance-page .attendance-table td {
+  padding: 18px 20px;
+  border-top: 1px solid #edf1f7;
+  color: #4d5d77;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.attendance-page .attendance-table tbody tr {
+  transition: background 0.2s;
+}
+
+.attendance-page .attendance-table tbody tr:hover {
+  background: #f7faff;
+}
+
+.attendance-page .attendance-table td strong {
+  color: #253550;
+  font-weight: 700;
+}
+
+/* ===== Status Badges ===== */
+.attendance-page .attendance-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.attendance-page .status-present {
+  background: #e6f8ed;
+  color: #168348;
+}
+
+.attendance-page .status-absent {
+  background: #ffebeb;
+  color: #cf3434;
+}
+
+.attendance-page .status-late {
+  background: #fff3db;
+  color: #a96908;
+}
+
+.attendance-page .status-half-day {
+  background: #eee9ff;
+  color: #7047c5;
+}
+
+.attendance-page .status-on-leave {
+  background: #e7f1ff;
+  color: #2865c7;
+}
+
+/* ===== Feedback Messages ===== */
+.attendance-page .message {
+  padding: 18px 20px;
+  color: #71809b;
+  text-align: center;
+}
+
+.attendance-page .error-message {
+  color: #bd2d2d;
+  background: #fff1f1;
+  border-radius: 10px;
+}
+
+.attendance-page .success-message {
+  color: #168348;
+  background: #eaf9ef;
+  border-radius: 10px;
+}
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 1100px) {
+  .attendance-page .attendance-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .attendance-page .attendance-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .attendance-page {
+    gap: 16px;
+    padding: 12px;
+  }
+
+  .attendance-page .employee-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 22px;
+  }
+
+  .attendance-page .attendance-form-card {
+    padding: 20px;
+  }
+
+  .attendance-page .attendance-form-grid,
+  .attendance-page .attendance-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .attendance-page .attendance-form-grid button {
+    width: 100%;
+  }
+
+  .attendance-page .employee-controls {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 14px;
+  }
+
+  .attendance-page .employee-controls select {
+    width: 100%;
+  }
+
+  .attendance-page .attendance-table th,
+  .attendance-page .attendance-table td {
+    padding: 14px;
+  }
+}
+
+/* ================================
+   ATTENDANCE PAGE
+================================ */
+
+.attendance-page {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 28px 40px;
+  box-sizing: border-box;
+  color: #14213d;
+}
+
+.attendance-page *,
+.attendance-page *::before,
+.attendance-page *::after {
+  box-sizing: border-box;
+}
+
+.attendance-page .employee-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.attendance-page .employee-header h1 {
+  margin: 8px 0;
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -0.8px;
+}
+
+.attendance-page .employee-header p {
+  margin: 6px 0 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.attendance-page .eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #7186a8;
+}
+
+/* ================================
+   SHARED CARDS
+================================ */
+
+.attendance-page .table-card,
+.attendance-page .stat-card {
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #dce6f5;
+  border-radius: 22px;
+  box-shadow: 0 8px 28px rgba(30, 64, 120, 0.045);
+}
+
+.attendance-page .table-card {
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+/* ================================
+   TOP HEADER CARD
+================================ */
+
+.attendance-page .employee-header + .attendance-form-card {
+  margin-top: 0;
+}
+
+.attendance-page .attendance-form-card {
+  padding: 30px;
+}
+
+.attendance-page .attendance-form-card h2 {
+  margin: 0 0 26px;
+  font-size: clamp(20px, 2vw, 25px);
+  line-height: 1.35;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+  color: #102347;
+}
+
+/* ================================
+   ATTENDANCE FORM
+================================ */
+
+.attendance-page .attendance-form-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(180px, 1.25fr)
+    minmax(170px, 1fr)
+    minmax(150px, 0.85fr)
+    minmax(160px, auto);
+  align-items: end;
+  gap: 18px;
+}
+
+.attendance-page .attendance-form-grid label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 0;
+  color: #526783;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.attendance-page .attendance-form-grid input,
+.attendance-page .attendance-form-grid select {
+  width: 100%;
+  min-width: 0;
+  height: 52px;
+  padding: 0 15px;
+  border: 1px solid #d4e0f3;
+  border-radius: 12px;
+  background-color: #fbfdff;
+  color: #172b4d;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.attendance-page .attendance-form-grid input:focus,
+.attendance-page .attendance-form-grid select:focus {
+  border-color: #3974f6;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(57, 116, 246, 0.12);
+}
+
+.attendance-page .attendance-form-grid button {
+  min-width: 160px;
+  height: 52px;
+  align-self: end;
+  white-space: nowrap;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.attendance-page .primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 22px;
+  min-height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3978fa, #2458df);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 750;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.16);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.attendance-page .primary-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 9px 20px rgba(37, 99, 235, 0.24);
+}
+
+.attendance-page .primary-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ================================
+   SUCCESS AND ERROR MESSAGES
+================================ */
+
+.attendance-page .message {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  color: #526783;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.attendance-page .success-message {
+  border: 1px solid #a8ebc2;
+  background: #ecfdf3;
+  color: #087443;
+}
+
+.attendance-page .error-message {
+  border: 1px solid #fecaca;
+  background: #fff1f2;
+  color: #b42318;
+}
+
+/* ================================
+   ATTENDANCE STATISTICS
+================================ */
+
+.attendance-page .attendance-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.attendance-page .stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 138px;
+  padding: 24px 16px;
+  text-align: center;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.attendance-page .stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(30, 64, 120, 0.09);
+}
+
+.attendance-page .stat-card span {
+  color: #7183a2;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.attendance-page .stat-card strong {
+  margin-top: 12px;
+  color: #102347;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+/* ================================
+   SEARCH AND FILTER
+================================ */
+
+.attendance-page .attendance-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.attendance-page .attendance-controls input,
+.attendance-page .attendance-controls select {
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid #d4e0f3;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #263b5c;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.attendance-page .attendance-controls input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.attendance-page .attendance-controls select {
+  width: 190px;
+  max-width: 100%;
+}
+
+.attendance-page .attendance-controls input:focus,
+.attendance-page .attendance-controls select:focus {
+  border-color: #3974f6;
+  box-shadow: 0 0 0 3px rgba(57, 116, 246, 0.1);
+}
+
+/* ================================
+   ATTENDANCE TABLE
+================================ */
+
+.attendance-page .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e5ecf7;
+  border-radius: 14px;
+}
+
+.attendance-page .attendance-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+}
+
+.attendance-page .attendance-table th {
+  padding: 16px 18px;
+  background: #f5f8fe;
+  color: #657894;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  white-space: nowrap;
+}
+
+.attendance-page .attendance-table td {
+  padding: 17px 18px;
+  border-top: 1px solid #edf1f8;
+  color: #40536f;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.attendance-page .attendance-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.attendance-page .attendance-table tbody tr:hover {
+  background: #f8faff;
+}
+
+.attendance-page .attendance-table td strong {
+  color: #1b2e4b;
+  font-weight: 700;
+}
+
+/* ================================
+   STATUS LABELS
+================================ */
+
+.attendance-page .attendance-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.attendance-page .status-present {
+  background: #e8f9ef;
+  color: #15803d;
+}
+
+.attendance-page .status-absent {
+  background: #fff0f0;
+  color: #c62828;
+}
+
+.attendance-page .status-late {
+  background: #fff6df;
+  color: #a16207;
+}
+
+.attendance-page .status-half-day {
+  background: #f1eaff;
+  color: #6d28d9;
+}
+
+.attendance-page .status-on-leave {
+  background: #eaf3ff;
+  color: #1d4ed8;
+}
+
+.attendance-page .status-unknown {
+  background: #eef2f7;
+  color: #475569;
+}
+
+/* ================================
+   TABLE EMPTY STATE
+================================ */
+
+.attendance-page .table-wrapper .message {
+  margin: 0;
+  padding: 24px;
+  text-align: center;
+}
+
+/* ================================
+   RESPONSIVE TABLET
+================================ */
+
+@media (max-width: 1100px) {
+  .attendance-page {
+    padding: 22px 20px 32px;
+  }
+
+  .attendance-page .attendance-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .attendance-page .attendance-form-grid button {
+    width: 100%;
+  }
+
+  .attendance-page .attendance-stats {
+    gap: 14px;
+  }
+
+  .attendance-page .table-card {
+    padding: 24px;
+  }
+}
+
+/* ================================
+   RESPONSIVE MOBILE
+================================ */
+
+@media (max-width: 640px) {
+  .attendance-page {
+    padding: 16px 12px 28px;
+  }
+
+  .attendance-page .employee-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+
+  .attendance-page .employee-header .primary-button {
+    width: 100%;
+  }
+
+  .attendance-page .table-card {
+    padding: 18px 14px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+
+  .attendance-page .attendance-form-card h2 {
+    margin-bottom: 20px;
+    font-size: 21px;
+  }
+
+  .attendance-page .attendance-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+  }
+
+  .attendance-page .attendance-form-grid input,
+  .attendance-page .attendance-form-grid select,
+  .attendance-page .attendance-form-grid button {
+    width: 100%;
+  }
+
+  .attendance-page .attendance-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 22px 0;
+  }
+
+  .attendance-page .stat-card {
+    min-height: 112px;
+    padding: 18px 10px;
+    border-radius: 16px;
+  }
+
+  .attendance-page .stat-card span {
+    font-size: 12px;
+  }
+
+  .attendance-page .stat-card strong {
+    font-size: 30px;
+  }
+
+  .attendance-page .attendance-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .attendance-page .attendance-controls input,
+  .attendance-page .attendance-controls select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .attendance-page .attendance-table th,
+  .attendance-page .attendance-table td {
+    padding: 14px 12px;
+  }
+}
+.attendance-page .attendance-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.attendance-page .secondary-button {
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid #d4e0f3;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #29466e;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.attendance-page .secondary-button:hover {
+  background: #f3f7ff;
+  border-color: #9bb8ee;
+}
+
+@media (max-width: 640px) {
+  .attendance-page .attendance-header-actions {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .attendance-page .attendance-header-actions button {
+    width: 100%;
+  }
+}
+
